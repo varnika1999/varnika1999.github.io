@@ -1,0 +1,31 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+```
+
+## the two questions that were asked  
+so in this project, i have created a ppt and used rmarkdown for the same, and it includes date within 2months as asked in the question, and the o/p has a plot  with the help of plotly and with the help of up-down and sidewards keys u can switch the slides accordingly
+
+
+## JetFighters with their speed
+So in this assignment of mine, I am making a plot based on the speed of the jet fighter in the world. it will consist of a plot which shows the speed with their respective jet fighter names
+ all the speed data are in the unit MACH where 1 mach is equal to 1225.0400 km/h.
+
+```{r}
+
+Speed_Jet_Fighters <- c("MiG_31E_Fighter","MiG_25_Foxbat","F_15E_Strike_Eagle","Su_27SK","Shenyang_J_11_Fighter","MiG_23_Flogger")
+
+
+
+
+Speed_Jet <-c (2.832,2.830,2.51,2.351,2.350,2.349)
+
+plottingData <- data.frame(Speed_Jet_Fighters,Speed_Jet)
+```
+## Procedding for the Bar_Graph part usingPlotly
+
+```{r warning=FALSE}
+
+plot_ly(data = plottingData, x = ~Speed_Jet_Fighters, y = ~Speed_Jet, type = "bar") %>%
+ 
+  layout(title = "JetFighters with their speed", xaxis=list(title="Jet_Fighters Name"), yaxis=list(title="JetFighters speed"))
